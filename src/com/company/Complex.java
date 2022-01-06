@@ -28,6 +28,10 @@ public class Complex {
         return real + " + " + ima + "i";
     }
 
+//    public Complex multiply(Complex other) {
+//
+//    }
+
     public static void main(String[] args) {
         Complex x = new Complex(3,4);
         Complex y = new Complex(4,5);
