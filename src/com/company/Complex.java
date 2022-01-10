@@ -54,9 +54,9 @@ public class Complex {
         Complex x = new Complex(3,4);
         Complex y = new Complex(4,5);
         Complex z = new Complex(1.0,2.0);
-        Complex a = new Complex(2.0,-4.5);
-        Complex b = new Complex(6.0);
-        Complex c = new Complex(3.0);
+        Complex a = new Complex(1.0,-1.5);
+        Complex b = new Complex(3.0);
+        Complex c = new Complex(4.0);
 
         System.out.println("abs: ");
         System.out.println(x.abs());
