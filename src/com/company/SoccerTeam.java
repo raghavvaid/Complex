@@ -34,7 +34,7 @@ public class SoccerTeam {
     public int getPoints(){
         return 3*wins + ties;
     }
-    
+
     public void reset(){
         wins = 0;
         ties = 0;
@@ -49,7 +49,7 @@ public class SoccerTeam {
         return totalGoals;
     }
 
-    public static void resetTournament(){
+    public static void startTournament(){
         gamesPlayed = 0;
         totalGoals = 0;
     }
@@ -60,23 +60,42 @@ public class SoccerTeam {
         SoccerTeam green = new SoccerTeam();
         SoccerTeam blue = new SoccerTeam();
 
-        resetTournament();
+        startTournament();
 
-        red.played(orange,  3,  5);
+        red.played(orange,  5,  3);
         orange.played(green, 7, 2);
         green.played(blue, 6, 6);
         blue.played(red, 7, 8);
 
         System.out.println("Tournament 1: ");
-        System.out.println("Red scored " + red.getPoints() + " goals");
-        System.out.println("Orange scored " + orange.getPoints() + " goals");
-        System.out.println("Green scored " + green.getPoints() + " goals");
-        System.out.println("Blue scored " + blue.getPoints() + " goals");
+        System.out.println("Red scored " + red.getPoints() + " points");
+        System.out.println("Orange scored " + orange.getPoints() + " points");
+        System.out.println("Green scored " + green.getPoints() + " points");
+        System.out.println("Blue scored " + blue.getPoints() + " points");
 
-        System.out.println("Total games played " + getGamesPlayed());
-        System.out.println("Total goals scored " + getGoalsScored());
+        System.out.println("Total games played: " + getGamesPlayed());
+        System.out.println("Total goals scored: " + getGoalsScored());
         System.out.println();
 
+        startTournament();
+        red.reset();
+        orange.reset();
+        green.reset();
+        blue.reset();
 
+        red.played(orange,  1,  3);
+        orange.played(green, 5, 4);
+        green.played(blue, 0, 5);
+        blue.played(red, 9, 9);
+
+        System.out.println();
+        System.out.println("Tournament 2: ");
+        System.out.println("Red " + red.getPoints() + " points");
+        System.out.println("Orange " + orange.getPoints() + " points");
+        System.out.println("Green " + green.getPoints() + " points");
+        System.out.println("Blue " + blue.getPoints() + " points");
+
+        System.out.println("Total games played: " + getGamesPlayed());
+        System.out.println("Total goals scored: " + getGoalsScored());
     }
 }
